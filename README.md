@@ -3,7 +3,7 @@
 This is a forked tree of Gluon's v2014.4 packages ...
 
 It stems from a discussion on IRC:
-
+```
 00:43 < wusel> neoraider: "Du kannst keine Pakete im Site-Feed haben, die schon in Gluon existieren" also, eigentlich sollte das tun, faktisch ist das aber problematisch, ja.
 00:43 <@neoraider> `make update` fasst nur base, patching und `patched` an
 00:43 <@neoraider> wusel, das ist nicht vorgesehen und wird kaputtgehen
@@ -29,4 +29,4 @@ It stems from a discussion on IRC:
 01:26 < wusel> Da der Weg augenscheinlich "deprecated" ist, werde ich das lassen. Andererseits brauche ich 2014.4 sschon wegen der neuen HW eher gestern :(
 01:27 <@neoraider> Ich denke, das einfachste wäre, das ganze Paket-Repo zu forken und einfach eure Änderungen in das gluon-setup-mode-Paket reinzupacken
 01:27 <@neoraider> Ist nicht sauber, aber da mit 2014.4 keine sauere Lösung möglich ist, ist wohl das wichtigste erstmal, eine funktionierende Lösung zu haben
-
+```
