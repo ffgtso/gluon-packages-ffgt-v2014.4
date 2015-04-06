@@ -71,6 +71,10 @@ function action_reboot()
 
     luci.template.render("gluon-config-mode/reboot", { parts=parts
                                                      , hostname=hostname
+                                                     , pubkey=pubkey
+                                                     , site=site
+                                                     , sysconfig=sysconfig
+                                                     , location=location}
                                                      })
   else
     debug.setfenv(io.stdout, debug.getfenv(io.open '/dev/null'))
