@@ -9,6 +9,10 @@ function M.section(form)
     local s = form:section(cbi.SimpleSection, nil,
       [[Dieser Knoten aktualisiert seine Firmware automatisch, sobald
       eine neue Version vorliegt.]])
+  else
+    local s = form:section(cbi.SimpleSection, nil,
+      [[Dieser Knoten aktualisiert seine Firmware <b>nicht automatisch</b>.
+      Bitte reaktiviere diese Funktion im <i>Expert Mode</i>.]])
   end
 end
 
