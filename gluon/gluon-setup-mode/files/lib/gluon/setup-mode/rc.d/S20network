@@ -37,7 +37,7 @@ prepare_config() {
 	setup_if="$(lua -e 'print(require("gluon.sysconfig").setup_ifname)')"
 
 	single_only=0
-	if [ "${lan_if}" = "${wan_if}" -o "${lan_if}" = "nil" -o "${wan_if}" = "nil"]; then
+	if [ "${lan_if}" = "${wan_if}" -o "${lan_if}" = "nil" -o "${wan_if}" = "nil" ]; then
 		single_only=1
 	else
 	    if [ "${setup_if}" = "${lan_if}" ]; then
