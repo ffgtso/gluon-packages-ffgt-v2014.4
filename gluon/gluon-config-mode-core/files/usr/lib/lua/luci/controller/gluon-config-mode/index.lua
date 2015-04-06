@@ -74,7 +74,7 @@ function action_reboot()
                                                      , pubkey=pubkey
                                                      , site=site
                                                      , sysconfig=sysconfig
-                                                     , location=location}
+                                                     , location=location
                                                      })
   else
     debug.setfenv(io.stdout, debug.getfenv(io.open '/dev/null'))
