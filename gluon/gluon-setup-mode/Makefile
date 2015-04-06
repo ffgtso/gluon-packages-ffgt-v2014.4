@@ -33,7 +33,6 @@ endef
 
 define Package/gluon-setup-mode/install
 	$(CP) ./files/* $(1)/
-	$(MV) $(1)/lib/gluon/setup-mode/notify-setup.cron $(1)/lib/gluon/cron/notify-setup
 endef
 
 $(eval $(call BuildPackage,gluon-setup-mode))
