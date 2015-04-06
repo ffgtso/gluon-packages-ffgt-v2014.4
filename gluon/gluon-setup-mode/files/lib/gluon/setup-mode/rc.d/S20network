@@ -47,17 +47,17 @@ prepare_config() {
 	    fi
 
         uci_add network interface fallback
-        uci_set network setup ifname "${fallback_if}"
-        uci_set network setup proto 'static'
-        uci_set network setup ipaddr "$SETUP_MODE_ADDR"
-        uci_set network setup netmask "$SETUP_MODE_NETMASK"
+        uci_set network fallback ifname "${fallback_if}"
+        uci_set network fallback proto 'static'
+        uci_set network fallback ipaddr "$SETUP_MODE_ADDR"
+        uci_set network fallback netmask "$SETUP_MODE_NETMASK"
 
         FALLBACK_IP=169.254.1.42
         uci_add network interface APIPA
-        uci_set network setup ifname "${fallback_if}"
-        uci_set network setup proto 'static'
-        uci_set network setup ipaddr "${FALLBACK_IP}"
-        uci_set network setup netmask "255.255.0.0"
+        uci_set network APIPA ifname "${fallback_if}"
+        uci_set network APIPA proto 'static'
+        uci_set network APIPA ipaddr "${FALLBACK_IP}"
+        uci_set network APIPA netmask "255.255.0.0"
 	fi
 
 	uci_commit network
