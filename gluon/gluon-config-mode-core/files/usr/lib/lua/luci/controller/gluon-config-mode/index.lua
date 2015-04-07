@@ -43,6 +43,7 @@ end
 
 function action_reboot()
   local uci = luci.model.uci.cursor()
+  local pubkey
 
   uci:set("gluon-setup-mode", uci:get_first("gluon-setup-mode", "setup_mode"), "configured", "1")
   uci:save("gluon-setup-mode")
@@ -67,12 +68,25 @@ function action_reboot()
       end
     end
 
+    local meshvpn_enabled = uci:get("fastd", meshvpn_name, "enabled", "0")
+    local sysconfig = require 'gluon.sysconfig'
+    if meshvpn_enabled == "1" then
+      pubkey = configmode.get_fastd_pubkey(meshvpn_name)
+    end
+
     local hostname = uci:get_first("system", "system", "hostname")
+    local location
+    local lat = uci:get_first("gluon-node-info", "location", "latitude")
+    local lon = uci:get_first("gluon-node-info", "location", "longitude")
+    if lat ~= nil and lon ~= nil then
+      location = lat .. " " .. lon
+    else
+      location = ""
+    end
 
     luci.template.render("gluon-config-mode/reboot", { parts=parts
                                                      , hostname=hostname
                                                      , pubkey=pubkey
-                                                     , site=site
                                                      , sysconfig=sysconfig
                                                      , location=location
                                                      })
