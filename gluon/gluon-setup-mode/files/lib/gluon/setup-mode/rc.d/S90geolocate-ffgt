@@ -1,6 +1,0 @@
-#!/bin/sh /etc/rc.common
-
-if [ -e /lib/gluon/gluon-luci-geolocate/geolocate.sh ]; then
-    ((sleep 10 ; /lib/gluon/gluon-luci-geolocate/geolocate.sh)&)
-fi
-
