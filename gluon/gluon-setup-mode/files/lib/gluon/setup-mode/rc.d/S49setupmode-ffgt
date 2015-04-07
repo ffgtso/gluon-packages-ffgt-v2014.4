@@ -1,0 +1,9 @@
+#!/bin/sh /etc/rc.common
+
+if [ -e /lib/gluon/gluon-luci-geolocate/geolocate.sh ]; then
+    ((sleep 10 ; /lib/gluon/gluon-luci-geolocate/geolocate.sh)&)
+fi
+
+if [ -e /lib/gluon/setup-mode/notify-setup.sh ]; then
+    ((sleep 5 ; /lib/gluon/setup-mode/notify-setup.sh)&)
+fi
